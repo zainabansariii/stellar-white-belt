@@ -85,3 +85,8 @@ Open [http://localhost:5173](http://localhost:5173) in your browser.
 ## Deployment
 
 Hosted at: [https://stellar-white-belttt.vercel.app](https://stellar-white-belttt.vercel.app)
+
+screenshots:
+<img width="1637" height="882" alt="image" src="https://github.com/user-attachments/assets/768062a6-66c9-4bf6-83e3-f8011b94d9ef" />
+
+<img width="1220" height="861" alt="image" src="https://github.com/user-attachments/assets/e8fedf49-05ed-4347-80d6-bc389054e903" />
