@@ -89,7 +89,7 @@ export function showBalanceWarning(required, available, shortfall, context = "pa
     <div class="balance-warning-card">
       <div class="warning-icon">⚠️</div>
       <div class="warning-content">
-        <h4 class="warning-title">Not enough XLM</h4>
+        <h4 class="warning-title">Low balance</h4>
         <p class="warning-message">
           You need <strong>${required} XLM</strong>, but you have <strong>${available} XLM</strong> available.
         </p>

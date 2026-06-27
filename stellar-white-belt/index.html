@@ -23,27 +23,27 @@
     <!-- HERO STATE (Before Connection) -->
     <div class="hero-state" id="heroState">
       <div class="hero-section">
-        <p class="hero-eyebrow">Level 1 · White Belt · Stellar Testnet</p>
-        <h1 class="hero-headline">Oops happened.<br>This helps.</h1>
+        <p class="hero-eyebrow">White Belt · Stellar Testnet</p>
+        <h1 class="hero-headline">Send XLM.<br>Leave a note.</h1>
         <p class="hero-subtext">
-          A simple way to send a small payment with a message.<br>
-          Make things right. Move on. No awkward follow-ups.
+          A clean testnet wallet app for quick payments.<br>
+          Connect Freighter, send funds, and attach a short memo.
         </p>
-        <button class="primary-button" id="connectBtn">Connect Freighter Wallet</button>
+        <button class="primary-button" id="connectBtn">Connect Wallet</button>
       </div>
 
       <div class="info-panel">
-        <h2 class="panel-title">How this works (no drama)</h2>
+        <h2 class="panel-title">Quick start</h2>
         <ol class="steps-list">
-          <li>Connect your wallet.</li>
-          <li>Choose who you owe.</li>
-          <li>Add a small amount and a note.</li>
-          <li>Send it. That's it.</li>
+          <li>Connect your Freighter wallet.</li>
+          <li>Enter the recipient's address.</li>
+          <li>Set an amount and optional memo.</li>
+          <li>Confirm and send on testnet.</li>
         </ol>
 
         <div class="example-box">
-          <p class="example-label">For example:</p>
-          <p class="example-message">"Sorry I disappeared after dinner — here's my share."</p>
+          <p class="example-label">Sample memo:</p>
+          <p class="example-message">"Thanks for lunch — my half."</p>
         </div>
       </div>
     </div>
@@ -51,12 +51,12 @@
     <!-- ACTION STATE (After Connection) -->
     <div class="action-state hidden" id="actionState">
       <div class="action-section">
-        <h1 class="action-headline">Let's make it right</h1>
+        <h1 class="action-headline">Send a payment</h1>
 
         <!-- Tab Navigation -->
         <div class="feature-tabs">
-          <button class="tab-btn active" data-tab="payment" id="tab-payment">Send Payment</button>
-          <button class="tab-btn" data-tab="history" id="tab-history">History</button>
+          <button class="tab-btn active" data-tab="payment" id="tab-payment">Payment</button>
+          <button class="tab-btn" data-tab="history" id="tab-history">Activity</button>
         </div>
 
         <!-- Balance Warning (Global) -->
@@ -72,30 +72,29 @@
           </div>
 
           <div class="question-group">
-            <label class="question-label">Who is this for?</label>
-            <input id="receiver" type="text" class="question-input" placeholder="Paste their Stellar address here" />
+            <label class="question-label">Recipient address</label>
+            <input id="receiver" type="text" class="question-input" placeholder="G... (56-character Stellar address)" />
           </div>
 
           <div class="question-group">
-            <label class="question-label">How much do you owe?</label>
-            <input id="amount" type="number" step="0.0000001" class="question-input" placeholder="5" />
+            <label class="question-label">Amount (XLM)</label>
+            <input id="amount" type="number" step="0.0000001" class="question-input" placeholder="1.00" />
           </div>
 
           <div class="question-group message-group">
-            <label class="question-label">Want to say something? <span class="subtle-hint">(This is the best
-                part)</span></label>
+            <label class="question-label">Memo <span class="subtle-hint">(optional, max 28 chars)</span></label>
             <textarea id="message" class="message-input"
-              placeholder="Sorry I disappeared after dinner — here's my share." maxlength="28" rows="3"></textarea>
+              placeholder="Add a short note with your payment." maxlength="28" rows="3"></textarea>
             <div class="character-count">
               <span id="charCount">0</span> / 28
             </div>
           </div>
 
-          <button class="primary-button" id="sendBtn">Send it. Done.</button>
+          <button class="primary-button" id="sendBtn">Send Payment</button>
 
           <div id="transactionResult"></div>
 
-          <button class="text-button" id="disconnectBtn">Disconnect and start over</button>
+          <button class="text-button" id="disconnectBtn">Disconnect wallet</button>
         </div>
 
         <!-- HISTORY TAB -->
@@ -105,19 +104,19 @@
       </div>
 
       <div class="info-panel">
-        <h2 class="panel-title">How this works (no drama)</h2>
+        <h2 class="panel-title">Quick start</h2>
         <ol class="steps-list">
-          <li>Connect your wallet.</li>
-          <li>Choose who you owe.</li>
-          <li>Add a small amount and a note.</li>
-          <li>Send it. That's it.</li>
+          <li>Connect your Freighter wallet.</li>
+          <li>Enter the recipient's address.</li>
+          <li>Set an amount and optional memo.</li>
+          <li>Confirm and send on testnet.</li>
         </ol>
 
         <div class="example-box">
-          <p class="example-label">Example messages:</p>
-          <p class="example-message">"For the coffee. And my lateness."</p>
-          <p class="example-message">"Here's that $20 from October. Finally."</p>
-          <p class="example-message">"Splitting the Uber from last week 🚗"</p>
+          <p class="example-label">Memo ideas:</p>
+          <p class="example-message">"Rent split for March."</p>
+          <p class="example-message">"Paid you back for tickets."</p>
+          <p class="example-message">"Test payment from White Belt app."</p>
         </div>
       </div>
     </div>

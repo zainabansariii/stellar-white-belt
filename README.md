@@ -1,21 +1,23 @@
-# stellar-white-belt
+# Stellar White Belt
 
-A Stellar Testnet dApp for Level 1 (White Belt) that lets you connect a Freighter wallet, view your XLM balance, send payments with optional memos, and browse on-chain transaction history.
+A lightweight Stellar Testnet payment app built for the White Belt level. Connect Freighter, check your balance, send XLM with a short memo, and review past activity — all on testnet.
 
-## Project Description
+**Live app:** [https://stellar-white-belttt.vercel.app](https://stellar-white-belttt.vercel.app)
 
-This application demonstrates the core fundamentals of Stellar development:
+## What it does
 
-- Connect and disconnect a **Freighter** wallet on **Stellar Testnet**
-- Fetch and display the connected wallet's **XLM balance**
-- **Send XLM** payments on testnet with success/failure feedback and transaction hash
-- View real-time transaction history from Stellar Horizon
+This project covers the basics of building on Stellar:
 
-All transactions are signed securely via Freighter. No private keys are ever exposed to the app.
+- Link and unlink a **Freighter** wallet on **Stellar Testnet**
+- Pull and show the wallet's **XLM balance**
+- **Transfer XLM** on testnet with clear success or error feedback and a transaction hash
+- Load transaction history from Stellar Horizon
 
-## Level 1 Requirements Checklist
+Signing happens inside Freighter. The app never sees or stores private keys.
 
-| Requirement | Status |
+## White Belt checklist
+
+| Item | Done |
 |---|---|
 | Freighter wallet setup | ✅ |
 | Stellar Testnet | ✅ |
@@ -30,52 +32,56 @@ All transactions are signed securely via Freighter. No private keys are ever exp
 | Public GitHub repository | ✅ |
 | README with setup instructions | ✅ |
 
-## Tech Stack
+## Stack
 
 - **Frontend:** Vanilla JavaScript + Vite
 - **Blockchain:** Stellar SDK
 - **Wallet:** Freighter (`@stellar/freighter-api`)
 - **Network:** Stellar Testnet
 
-## Setup Instructions (Run Locally)
+## Run locally
 
-### 1. Clone the repository
+### 1. Clone the repo
 
 ```bash
 git clone https://github.com/zainabansariii/stellar-white-belt.git
 cd stellar-white-belt/stellar-white-belt
 ```
 
-### 2. Install dependencies
+### 2. Install packages
 
 ```bash
 npm install
 ```
 
-### 3. Start the development server
+### 3. Start the dev server
 
 ```bash
 npm run dev
 ```
 
-The app runs at [http://localhost:5173](http://localhost:5173).
+Open [http://localhost:5173](http://localhost:5173) in your browser.
 
-### 4. Configure Freighter
+### 4. Set up Freighter
 
-1. Install the [Freighter Wallet](https://www.freighter.app/) browser extension
-2. Switch the network to **TESTNET**
-3. Fund your account using [Stellar Laboratory Friendbot](https://laboratory.stellar.org/#account-creator?network=test)
+1. Install the [Freighter Wallet](https://www.freighter.app/) extension
+2. Set the network to **TESTNET**
+3. Top up your account with [Stellar Laboratory Friendbot](https://laboratory.stellar.org/#account-creator?network=test)
 
-## App Features
+## Features
 
-1. **Wallet connected state** — Shows the connected address, Testnet badge, and active session
-2. **Balance displayed** — Real-time XLM balance fetched from Stellar Testnet Horizon
-3. **Send payment** — Enter a recipient address and amount, sign in Freighter, and submit on testnet
-4. **Transaction result** — Success or failure message with full transaction hash and a link to Stellar Explorer
+1. **Connected wallet** — Address, Testnet badge, and session status in one bar
+2. **Live balance** — XLM balance from Stellar Testnet Horizon
+3. **Send payment** — Recipient, amount, optional memo; sign in Freighter and submit
+4. **Result screen** — Success or failure with transaction hash and an explorer link
 
-## Notes
+## Important
 
-- This is a **Testnet-only** application
-- Requires the Freighter wallet browser extension
-- All transactions require explicit user approval in Freighter
-- No secret keys are stored or handled by the app
+- **Testnet only** — no mainnet funds
+- Freighter browser extension required
+- Every transaction needs approval in Freighter
+- Secret keys stay in the wallet, not in this app
+
+## Deployment
+
+Hosted at: [https://stellar-white-belttt.vercel.app](https://stellar-white-belttt.vercel.app)

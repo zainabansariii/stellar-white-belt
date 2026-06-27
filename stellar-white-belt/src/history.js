@@ -150,8 +150,8 @@ export function renderHistory(transactions, containerId = "history-content") {
     if (!transactions || transactions.length === 0) {
         container.innerHTML = `
       <div class="empty-state">
-        <p>No transactions yet.</p>
-        <p class="empty-state-hint">Your payment history will appear here.</p>
+        <p>No activity yet.</p>
+        <p class="empty-state-hint">Sent and received payments will show up here.</p>
       </div>
     `;
         return;
@@ -218,8 +218,8 @@ export function showHistoryError(containerId = "history-content") {
 
     container.innerHTML = `
     <div class="error-state">
-      <p>Unable to load transaction history.</p>
-      <p class="error-state-hint">Check your connection and try again.</p>
+      <p>Could not load activity.</p>
+      <p class="error-state-hint">Check your network connection and retry.</p>
       <button class="retry-button" onclick="window.retryHistory()">Retry</button>
     </div>
   `;
@@ -236,7 +236,7 @@ export function showHistoryLoading(containerId = "history-content") {
     container.innerHTML = `
     <div class="loading-state">
       <div class="loading-spinner"></div>
-      <p>Loading your transactions...</p>
+      <p>Fetching transactions...</p>
     </div>
   `;
 }

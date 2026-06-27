@@ -89,19 +89,19 @@ const getErrorMessage = (error) => {
   const message = error?.message || "";
 
   if (message.includes("Account not found")) {
-    return "Your testnet account needs some XLM first. Visit Stellar Laboratory to fund it.";
+    return "Fund your testnet account first using Stellar Laboratory Friendbot.";
   }
   if (message.includes("network")) {
-    return "Looks like you're on the wrong network. Switch Freighter to Testnet.";
+    return "Wrong network detected. Please switch Freighter to Testnet.";
   }
   if (message.includes("Insufficient balance")) {
-    return "Not enough XLM to send. Add some funds first.";
+    return "Balance too low for this transfer. Add more testnet XLM.";
   }
   if (message.includes("User declined")) {
-    return "No worries. Cancelled.";
+    return "Transaction cancelled in Freighter.";
   }
 
-  return "Something went wrong. Want to try again?";
+  return "Payment failed. Please try again.";
 };
 
 // ===============================
@@ -178,7 +178,7 @@ document.getElementById("connectBtn").addEventListener("click", async () => {
     }
 
     if (!isTestnet) {
-      alert("Looks like you're on the wrong network. Switch Freighter to Testnet.");
+      alert("Please switch Freighter to Testnet before connecting.");
       setButtonLoading("connectBtn", false);
       return;
     }
@@ -271,7 +271,7 @@ document.getElementById("disconnectBtn").addEventListener("click", () => {
 // ===============================
 document.getElementById("sendBtn").addEventListener("click", async () => {
   if (!publicKey) {
-    alert("Connect your wallet first.");
+    alert("Please connect your wallet first.");
     return;
   }
 
@@ -281,12 +281,12 @@ document.getElementById("sendBtn").addEventListener("click", async () => {
 
   // Validation
   if (!destination || !amount || parseFloat(amount) <= 0) {
-    alert("Fill in who you're sending to and how much.");
+    alert("Enter a valid recipient address and amount greater than zero.");
     return;
   }
 
   if (destination.length !== 56 || !destination.startsWith("G")) {
-    alert("That doesn't look like a valid Stellar address. Double-check it?");
+    alert("Invalid Stellar address. It should start with G and be 56 characters.");
     return;
   }
 
@@ -297,7 +297,7 @@ document.getElementById("sendBtn").addEventListener("click", async () => {
   }
 
   setButtonLoading("sendBtn", true);
-  showTransactionResult("pending", "Sending...");
+  showTransactionResult("pending", "Submitting transaction...");
 
   try {
     // Load sender account
@@ -359,8 +359,8 @@ document.getElementById("sendBtn").addEventListener("click", async () => {
 
     // Success!
     const successMessage = memo
-      ? `It's sent. No follow-ups needed.`
-      : `Sent. Done.`;
+      ? `Payment sent with memo.`
+      : `Payment sent successfully.`;
 
     showTransactionResult("success", successMessage, result.hash);
 
